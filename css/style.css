@@ -1,0 +1,326 @@
+/* ===========================================================
+   Clearwater Dental — Clinic White design system
+   =========================================================== */
+
+:root {
+  --clw-blue-deep: #0F3B57;
+  --clw-blue: #1C6E8C;
+  --clw-blue-light: #E8F3F8;
+  --clw-white: #FFFFFF;
+  --clw-ink: #16232B;
+  --clw-muted: #5B6B75;
+  --clw-line: #DCE7EC;
+
+  --clw-font-display: 'Fraunces', serif;
+  --clw-font-body: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--clw-font-body);
+  color: var(--clw-ink);
+  background: var(--clw-white);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--clw-font-display);
+  color: var(--clw-blue-deep);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 600; }
+h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
+h3 { font-size: 1.25rem; }
+
+a { text-decoration: none; }
+
+.clw-lead {
+  color: var(--clw-muted);
+  font-size: 1.08rem;
+  max-width: 46ch;
+}
+
+/* ---------- Buttons ---------- */
+.clw-btn-primary {
+  background: var(--clw-blue-deep);
+  color: var(--clw-white);
+  border: 1px solid var(--clw-blue-deep);
+  border-radius: 6px;
+  padding: 0.65rem 1.5rem;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.clw-btn-primary:hover {
+  background: var(--clw-blue);
+  border-color: var(--clw-blue);
+  color: var(--clw-white);
+}
+.clw-btn-outline {
+  background: transparent;
+  color: var(--clw-blue-deep);
+  border: 1px solid var(--clw-blue-deep);
+  border-radius: 6px;
+  padding: 0.65rem 1.5rem;
+  font-weight: 600;
+}
+.clw-btn-outline:hover {
+  background: var(--clw-blue-light);
+  color: var(--clw-blue-deep);
+}
+
+/* ---------- Navbar ---------- */
+.clw-navbar {
+  border-bottom: 1px solid var(--clw-line);
+  padding: 0.9rem 0;
+}
+.clw-brand {
+  font-family: var(--clw-font-display);
+  font-size: 1.35rem;
+  color: var(--clw-blue-deep);
+  font-weight: 600;
+}
+.clw-brand i { color: var(--clw-blue); margin-right: 0.35rem; }
+.clw-brand span { font-weight: 400; }
+.navbar .nav-link {
+  color: var(--clw-ink);
+  font-weight: 500;
+  padding: 0.5rem 0.9rem !important;
+}
+.navbar .nav-link:hover { color: var(--clw-blue); }
+
+/* ---------- Hero ---------- */
+.clw-hero {
+  padding: 5rem 0 4rem;
+  background: linear-gradient(180deg, var(--clw-blue-light) 0%, var(--clw-white) 100%);
+}
+.clw-hero-art {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px -20px rgba(15,59,87,0.35);
+}
+.clw-hero-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.clw-hero-text h1 {
+  animation: clwFadeUp 0.7s ease both;
+}
+.clw-hero-text p, .clw-hero-text .d-flex {
+  animation: clwFadeUp 0.7s ease 0.15s both;
+}
+@keyframes clwFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Sections ---------- */
+.clw-section { padding: 4.5rem 0; }
+.clw-section-tint { background: var(--clw-blue-light); }
+.clw-section-head { max-width: 620px; margin-bottom: 2.75rem; }
+.clw-section-head p { color: var(--clw-muted); margin-top: 0.5rem; }
+
+/* ---------- Service cards ---------- */
+.clw-card {
+  background: var(--clw-white);
+  border: 1px solid var(--clw-line);
+  border-left: 3px solid var(--clw-blue);
+  border-radius: 8px;
+  padding: 1.75rem;
+  height: 100%;
+}
+.clw-card-icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--clw-blue-light);
+  color: var(--clw-blue-deep);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.clw-card p { color: var(--clw-muted); font-size: 0.95rem; }
+.clw-link { color: var(--clw-blue-deep); font-weight: 600; font-size: 0.9rem; }
+.clw-link:hover { color: var(--clw-blue); }
+
+/* ---------- Stats (signature) ---------- */
+.clw-stats {
+  background: var(--clw-blue-deep);
+  padding: 3rem 0;
+}
+.clw-stat {
+  font-family: var(--clw-font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--clw-white);
+  font-weight: 600;
+}
+.clw-stat-label {
+  color: #B9D3E0;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* ---------- About ---------- */
+.clw-check-list { list-style: none; padding: 0; margin-top: 1.5rem; }
+.clw-check-list li {
+  padding: 0.5rem 0;
+  color: var(--clw-ink);
+}
+.clw-check-list i { color: var(--clw-blue); margin-right: 0.6rem; }
+
+.clw-doctor-card {
+  background: var(--clw-white);
+  border: 1px solid var(--clw-line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.clw-doctor-card img { width: 100%; height: 320px; object-fit: cover; }
+.clw-doctor-info { padding: 1.25rem 1.5rem; }
+.clw-doctor-info h4 { margin: 0; }
+.clw-doctor-info p { color: var(--clw-muted); margin: 0.2rem 0 0.6rem; }
+.clw-badge {
+  display: inline-block;
+  background: var(--clw-blue-light);
+  color: var(--clw-blue-deep);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+}
+
+/* ---------- Gallery ---------- */
+.clw-gallery-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--clw-line);
+}
+.clw-gallery-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.clw-gallery-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(15,59,87,0) 40%, rgba(15,59,87,0.75) 100%);
+  display: flex; align-items: flex-end; justify-content: space-between;
+  padding: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.clw-gallery-item:hover .clw-gallery-overlay { opacity: 1; }
+.clw-gallery-overlay span {
+  color: var(--clw-white); font-weight: 600; font-size: 0.85rem;
+  background: rgba(255,255,255,0.15);
+  padding: 0.2rem 0.6rem; border-radius: 4px;
+}
+.clw-gallery-caption { margin: 0.6rem 0 0; color: var(--clw-muted); font-size: 0.9rem; }
+
+/* ---------- Testimonials ---------- */
+.clw-testimonial {
+  background: var(--clw-white);
+  border: 1px solid var(--clw-line);
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+}
+.clw-stars { color: #E8A93B; margin-bottom: 1rem; font-size: 0.95rem; }
+.clw-testimonial p {
+  font-family: var(--clw-font-display);
+  font-size: 1.2rem;
+  color: var(--clw-blue-deep);
+  font-style: italic;
+}
+.clw-testimonial-author { color: var(--clw-muted); font-weight: 600; margin-top: 1rem; font-size: 0.9rem; }
+.carousel-control-prev, .carousel-control-next { width: 5%; opacity: 1; }
+.clw-carousel-arrow {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--clw-white); color: var(--clw-blue-deep);
+  border: 1px solid var(--clw-line);
+}
+
+/* ---------- Pricing ---------- */
+.clw-price-card {
+  background: var(--clw-white);
+  border: 1px solid var(--clw-line);
+  border-radius: 10px;
+  padding: 2.25rem;
+  height: 100%;
+  position: relative;
+}
+.clw-price-card ul { list-style: none; padding: 0; margin: 1.5rem 0; }
+.clw-price-card ul li { padding: 0.4rem 0; color: var(--clw-muted); font-size: 0.95rem; }
+.clw-price-card ul i { color: var(--clw-blue); margin-right: 0.5rem; }
+.clw-price {
+  font-family: var(--clw-font-display);
+  font-size: 2.2rem;
+  color: var(--clw-blue-deep);
+  margin: 0.75rem 0 0;
+}
+.clw-price span { font-size: 1rem; color: var(--clw-muted); font-family: var(--clw-font-body); }
+.clw-price-featured {
+  border: 2px solid var(--clw-blue-deep);
+  box-shadow: 0 20px 40px -24px rgba(15,59,87,0.4);
+}
+.clw-badge-popular {
+  position: absolute; top: -14px; left: 2.25rem;
+  background: var(--clw-blue-deep); color: var(--clw-white);
+  font-size: 0.75rem; font-weight: 700;
+  padding: 0.3rem 0.8rem; border-radius: 20px;
+}
+
+/* ---------- FAQ ---------- */
+.clw-accordion .accordion-item {
+  border: 1px solid var(--clw-line);
+  border-radius: 8px !important;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+.clw-accordion .accordion-button {
+  font-family: var(--clw-font-display);
+  font-weight: 500;
+  color: var(--clw-blue-deep);
+  background: var(--clw-white);
+}
+.clw-accordion .accordion-button:not(.collapsed) {
+  background: var(--clw-blue-light);
+  color: var(--clw-blue-deep);
+  box-shadow: none;
+}
+.clw-accordion .accordion-button:focus { box-shadow: none; border-color: var(--clw-line); }
+.clw-accordion .accordion-body { color: var(--clw-muted); }
+
+/* ---------- Contact ---------- */
+.clw-contact-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+.clw-contact-list li { padding: 0.5rem 0; color: var(--clw-ink); }
+.clw-contact-list i { color: var(--clw-blue); width: 22px; }
+.clw-map { border-radius: 12px; overflow: hidden; border: 1px solid var(--clw-line); }
+
+/* ---------- Footer ---------- */
+.clw-footer { background: var(--clw-blue-deep); color: #B9D3E0; padding: 3rem 0 1.5rem; margin-top: 2rem; }
+.clw-brand-footer { color: var(--clw-white); }
+.clw-brand-footer i { color: #7FB8D6; }
+.clw-footer p { margin-top: 0.5rem; font-size: 0.9rem; }
+.clw-footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: center; }
+.clw-footer-links a { color: #B9D3E0; font-size: 0.9rem; }
+.clw-footer-links a:hover { color: var(--clw-white); }
+.clw-social { display: flex; gap: 0.75rem; justify-content: flex-end; }
+.clw-social a {
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.25);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--clw-white);
+}
+.clw-social a:hover { background: rgba(255,255,255,0.1); }
+.clw-footer hr { border-color: rgba(255,255,255,0.15); margin: 2rem 0 1rem; }
+.clw-copyright { font-size: 0.85rem; text-align: center; margin: 0; color: #8FB4C7; }
+
+/* ---------- Modal ---------- */
+.clw-modal { border-radius: 12px; border: none; }
+.clw-modal .modal-title { font-family: var(--clw-font-display); color: var(--clw-blue-deep); }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .clw-hero-text h1, .clw-hero-text p, .clw-hero-text .d-flex { animation: none; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+  .navbar-nav { padding-top: 1rem; }
+  .clw-social { justify-content: center; margin-top: 1rem; }
+}
